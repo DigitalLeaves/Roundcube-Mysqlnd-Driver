@@ -43,6 +43,7 @@ The sqli driver supports custom update queries, with the usual roundcube passwor
 * %d is replaced with the domain part of the username (in case the username is an email address)
 
 You could, for example, use the following query:
-´´´
+```
 $rcmail_config['password_query'] = 'UPDATE users SET password=ENCRYPT(\'%p\', CONCAT("$6$", SUBSTRING(SHA(RAND()), -16))) WHERE username=\'%u\' LIMIT 1';
-´´´
+```
+
