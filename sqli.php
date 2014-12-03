@@ -5,7 +5,7 @@
  *
  * Driver for passwords stored in SQL database
  *
- * @version 1.4
+ * @version 1.0
  * @author Ignacio Nieto Carvajal <contact@digitalleaves.com>
  *
  */
@@ -131,7 +131,6 @@ function password_save($curpass, $passwd)
     $sql = str_replace('%p', $db->real_escape_string($passwd), $sql);
     $sql = str_replace('%o', $db->real_escape_string($curpass), $sql);
 
-	error_log("Cambiando la contraseña de $username a $curpass");
 	$res = $db->query($sql);
 	if ($res == false) {
 		return PASSWORD_ERROR;
